@@ -1,14 +1,14 @@
-import random
 import glob
-import os
-import math
 import itertools
-import numpy as np
+import math
+import os
+import random
 
+import numpy as np
 import torch
 from torch.utils.data import Dataset
 
-
+# inputs are sorted
 class SumOfDataset(Dataset):
     """
     The target is the sum of all elements in each data point
@@ -29,12 +29,11 @@ class SumOfDataset(Dataset):
         return self.test_size
 
     def __getitem__(self, i):
-        max_val = random.randint(5,100)
+        max_val = random.randint(5, 100)
         x = np.arange(max_val - 5, max_val)
         y = np.array([max_val + 1])
 
         return x, y
-
 
 
 class DummyDataset(Dataset):
@@ -55,7 +54,7 @@ class DummyDataset(Dataset):
         return self.test_size
 
     def __getitem__(self, i):
-        max_val = random.randint(5,100)
+        max_val = random.randint(5, 100)
         x = np.arange(max_val - 5, max_val)
         y = np.array([max_val + 1])
 

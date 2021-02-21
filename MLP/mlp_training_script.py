@@ -1,23 +1,16 @@
-import os, sys
-import numpy as np
-import copy
-import shutil
-from collections import defaultdict
-import argparse
 from tqdm import tqdm
 
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 import torch.optim as optim
 
 from torch.utils.data import DataLoader
-from torchvision import transforms, datasets, models
 
 from dataset import DummyDataset
 from mlp_model import SimpleMLP
 
 dataset = DummyDataset()
+
 dataloader = DataLoader(
     dataset,
     batch_size=10,
